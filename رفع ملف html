@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعد ليلى الذكي</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .chat-container { max-width: 600px; margin: auto; padding: 20px; }
+        .header { font-size: 24px; margin-bottom: 20px; }
+        .messages { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+        input { width: 80%; padding: 10px; }
+        button { padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">مرحباً، أنا مساعد ليلى الذكي 🤖</div>
+        <div class="messages" id="chat"></div>
+        <div>
+            <input type="text" id="input" placeholder="اكتب سؤالك هنا..." />
+            <button onclick="sendMessage()">إرسال</button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('input');
+            const chat = document.getElementById('chat');
+            const message = input.value;
+            chat.innerHTML += `<div>${message}</div>`;
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
